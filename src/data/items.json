@@ -1,0 +1,38 @@
+[
+  {
+    "phone": "0912 345 6789",
+    "company": "دیجی‌کالا",
+    "manager": "علی رضایی",
+    "logo": "https://gifto.biz/wp-content/uploads/2025/02/digikala-logo-fa-2.jpg",
+    "location": { "lat": 35.6892, "lng": 51.389 } 
+
+
+  },
+  {
+    "phone": "0935 123 4567",
+    "company": "اسنپ",
+    "manager": "نگار حسینی",
+    "logo": "https://i.postimg.cc/6Qj4DmQD/snapp.png",
+    "location": { "lat": 36, "lng": 54 }  
+  },
+  {
+    "phone": "0919 876 5632",
+    "company": "کافه‌بازار",
+    "manager": "رضا محمدی",
+    "logo": "https://i.postimg.cc/xdybtdrT/bazar.png",
+        "location": { "lat": 35.7, "lng": 52.1 }  
+
+  },
+  {
+    "phone": "0901 234 5678",
+    "company": "آپارات",
+    "manager": "سارا رحمانی",
+    "logo": "https://i.postimg.cc/SsRNCQkP/aparat.png"
+  },
+  {
+    "phone": "0930 987 6543",
+    "company": "تپسی",
+    "manager": "میلاد نوری",
+    "logo": "https://i.postimg.cc/ZRXBqvpH/tapsi.png"
+  }
+]

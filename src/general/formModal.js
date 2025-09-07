@@ -5,9 +5,9 @@ import MapFixed from "./mapfixed";
 const ContactFormModal = ({ 
   isOpen, 
   onClose, 
-  onSave,   // هم برای Add و هم برای Edit
+  onSave,   
   initialData = null, 
-  mode = "add" // "add" یا "edit"
+  mode = "add" // "add" or "edit"
 }) => {
   const [form, setForm] = useState({
     company: "",
@@ -19,7 +19,7 @@ const ContactFormModal = ({
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [currentCenterLocation, setCurrentCenterLocation] = useState(null);
 
-  // پر کردن فرم وقتی initialData وجود داره
+  // fill form with initialData 
   useEffect(() => {
     if (initialData) {
       setForm({
@@ -53,7 +53,7 @@ const ContactFormModal = ({
         : null,
     };
 
-    onSave(contactData); // هم برای Add هم Edit
+    onSave(contactData); // add or edit
     onClose();
   };
 
@@ -86,7 +86,7 @@ const ContactFormModal = ({
             onChange={handleChange}
           />
 
-          {/* فیلد انتخاب موقعیت */}
+          {/*choose location*/}
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">
               موقعیت مکانی
@@ -104,6 +104,8 @@ const ContactFormModal = ({
             id="contact"
             name="contact"
             label="اطلاعات تماس"
+              dir="ltr"
+
             value={form.contact}
             onChange={handleChange}
           />
@@ -134,7 +136,7 @@ const ContactFormModal = ({
         </form>
       </div>
 
-      {/* مدال انتخاب موقعیت مکانی */}
+      {/* location modal */}
       {isMapOpen &&  (
         
         
@@ -153,7 +155,7 @@ const ContactFormModal = ({
               انتخاب موقعیت مکانی
             </h3>
 
-            {/* نقشه */}
+            {/* mao */}
             <div className="flex-1 relative">
               <MapFixed
                 mode="select"
@@ -162,7 +164,7 @@ const ContactFormModal = ({
               />
             </div>
 
-            {/* دکمه‌ها */}
+            {/* map button */}
             <div className="flex gap-3 p-4 border-t bg-gray-50">
               <button
                 className="flex-1 py-2 bg-green-500 text-white rounded-lg"

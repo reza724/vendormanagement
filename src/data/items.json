@@ -27,12 +27,16 @@
     "phone": "0901 234 5678",
     "company": "آپارات",
     "manager": "سارا رحمانی",
-    "logo": "https://i.postimg.cc/SsRNCQkP/aparat.png"
+    "logo": "https://i.postimg.cc/SsRNCQkP/aparat.png",
+     "location": { "lat": 35.8892, "lng": 51.229 } 
+
   },
   {
     "phone": "0930 987 6543",
     "company": "تپسی",
     "manager": "میلاد نوری",
-    "logo": "https://i.postimg.cc/ZRXBqvpH/tapsi.png"
+    "logo": "https://i.postimg.cc/ZRXBqvpH/tapsi.png",
+    "location": { "lat": 34, "lng": 50 } 
+
   }
 ]

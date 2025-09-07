@@ -4,7 +4,7 @@ import ContactFormModal from "./formModal";
 import { ACTIONS } from "./contactReducer";
 
 export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocation }) => {
-  // --- State برای Toast (منو روی هر کارت)
+  // --- State for Toast (menu for each toast)
   const [toast, setToast] = useState({
     isOpen: false,
     contactData: null,
@@ -12,10 +12,10 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
     position: { top: 0, left: 0 }
   });
 
-  // --- State برای Add
+  // --- State  Add
   const [addForm, setAddForm] = useState(false);
 
-  // --- State برای Edit
+  // --- State  Edit
   const [editForm, setEditForm] = useState({
     isOpen: false,
     contactData: null,
@@ -24,17 +24,17 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
 
   const triggerRefs = useRef({});
 
-  // بستن فرم ادیت
+  // close edit
   const closeEditForm = () =>
     setEditForm({ isOpen: false, contactData: null, contactIndex: null });
 
-  // ذخیره تغییرات ادیت
+  // save edit
   const handleSaveEdit = (contactIndex, updatedData) => {
     dispatch({ type: ACTIONS.UPDATE_CONTACT, index: contactIndex, payload: updatedData });
     closeEditForm();
   };
 
-  // باز کردن Toast برای یک کارت
+  // find position of cart
   const handleInfoClick = (contactIndex) => {
     const rect = triggerRefs.current[contactIndex]?.getBoundingClientRect();
     const position = rect
@@ -51,7 +51,7 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
   const closeToast = () =>
     setToast({ isOpen: false, contactData: null, contactIndex: null, position: { top: 0, left: 0 } });
 
-  // اکشن‌های Toast
+  //  Toast actions
   const handleToastAction = (actionKey, contactIndex) => {
     switch (actionKey) {
       case "edit":
@@ -81,7 +81,7 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
     }
   };
 
-  // فیلتر سرچ
+  //search filters
   const filteredContacts = useMemo(() => {
     if (!searchQuery) return contacts;
     return contacts.filter((item) =>
@@ -92,7 +92,7 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
   return (
     <div className="space-y-4 p-4">
 
-      {/* لیست کارت‌ها */}
+      {/* card lists */}
       {filteredContacts.length === 0 ? (
         <div className="glass-effect bg-white/30 backdrop-blur-md rounded-2xl p-6 text-center text-gray-600">
           آیتمی یافت نشد.
@@ -157,10 +157,10 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
         ))
       )}
 
-      {/* Toast اکشن‌ها */}
+      {/* Toast actions */}
       <Toast {...toast} onClose={closeToast} onAction={handleToastAction} />
 
-      {/* فرم Add */}
+      {/*  Add form */}
       {addForm && (
         <ContactFormModal
           isOpen={addForm}
@@ -172,7 +172,7 @@ export const ContactCardList = ({ searchQuery, contacts, dispatch, onSelectLocat
         />
       )}
 
-      {/* فرم Edit */}
+      {/*  Edit form */}
       {editForm.isOpen && (
         <ContactFormModal
           isOpen={editForm.isOpen}

@@ -357,8 +357,7 @@ const ContactCardList = () => {
       payload: formData 
     });
     
-    // Here you would normally save to JSON file via API
-    // For now we'll just log the updated data
+   
     console.log('Updated contacts data:', contacts);
   };
 
